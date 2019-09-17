@@ -1,4 +1,6 @@
 import React from 'react'
+import { Button, ListGroup } from 'react-bootstrap';
+
 
 class Task extends React.Component {
     
@@ -16,17 +18,21 @@ class Task extends React.Component {
         const temp = this.props.taskList;
         const temp1 = temp.map( (x,i) => {
             return(
-                <li key={i} data-key={i}>{x}
-                    <button onClick={this.editTask.bind(this,i)}>Edit</button>
-                    <button onClick={this.deleteTask.bind(this,i)}>Delete</button>
+                <li key={i} data-key={i}>{ x}
+                    <Button variant = "primary" bsPrefix="mr-3" onClick={this.editTask.bind(this,i)}>Edit</Button>
+                    <Button variant = "danger" bsPrefix="mr-3" onClick={this.deleteTask.bind(this,i)}>Delete</Button>
                 </li>
             )
         })
     
             return (
-                <ul>
-                  {temp1}
-                </ul>
+                <ListGroup>
+                    <ListGroup.Item bsPrefix="mt-3">
+                         {temp1}
+                    </ListGroup.Item>
+
+                </ListGroup>
+                
                    
             );
 

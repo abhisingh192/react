@@ -1,4 +1,6 @@
 import React from 'react'
+import { Button } from 'react-bootstrap';
+
 
 class Form extends React.Component {
 
@@ -16,7 +18,7 @@ class Form extends React.Component {
                 type="text" 
                 ref={value => this.myRef=value}
                 placeholder="enter a task"/>
-                <button onClick={this.addTask.bind(this)}>Add</button> 
+                <Button variant = "success" bsPrefix="mr-3" onClick={this.addTask.bind(this)}>Add</Button> 
             </form>
                 
                
